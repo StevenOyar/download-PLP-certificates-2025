@@ -19,22 +19,16 @@ def test_web_interaction():
         driver.get("https://www.powerlearnprojectafrica.org/")
         driver.maximize_window()
 
-        # ignores latest pop up about new things coming to plp
-        learn_more = WebDriverWait(driver, 20).until(
-            EC.element_to_be_clickable(
-                (By.XPATH, "/html/body/div[9]/div/div/div/div/div/div[1]/div[3]/button")
-            )
-        )
-        learn_more.click()
-        time.sleep(2)
+        
 
-        # clicks the button to close the pop up.
-        got_it = WebDriverWait(driver, 20).until(
-            EC.element_to_be_clickable(
-                (By.XPATH, "/html/body/div[9]/div/div/div/div/div[3]/button[2]")
+       
+        # clicks at the pop up to make learn more about the new programs 
+        learn_more = WebDriverWait(driver, 20).until(
+                EC.element_to_be_clickable((By.XPATH, '/html/body/div[11]/div/div/div/div/div/div/div[3]/a'))
             )
-        )
-        got_it.click()
+        print("this line was  successfully automated")
+        learn_more.click()
+
         time.sleep(2)
 
         # clicks  the button PLP Academy
